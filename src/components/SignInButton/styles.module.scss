@@ -1,3 +1,12 @@
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .signInButton {
   height: 3rem;
   border-radius: 3rem;
@@ -29,5 +38,20 @@
 
   &:hover {
     filter: brightness(0.8);
+  }
+
+  &.loading {
+    cursor: not-allowed;
+
+    &:hover {
+      filter: none;
+    }
+
+    svg {
+      cursor: not-allowed;
+      animation: rotate 1s linear infinite;
+      margin-right: 0;
+      margin-left: 0;
+    }
   }
 }
